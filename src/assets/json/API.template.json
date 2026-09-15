@@ -1,0 +1,29 @@
+{
+    "type": "api",
+    "module": {
+    "name": "module",
+    "display": "Module",
+    "element-type": "object",
+    "elements":[
+      {
+          "import": "basic-rest"
+      
+      },
+      {
+          "import": "dependencies-bel"
+      },
+      {
+          "import": "dirspec"
+      },
+  
+      {
+        "import": "bel-api-properties"
+      },
+      {
+        "import": "resoucelist-api"
+      }
+      
+  
+    ]
+    }
+  }

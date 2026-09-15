@@ -1,0 +1,158 @@
+@use 'nnp-shared-styles/src/index.scss';
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ── Dark Theme Overrides for Tailwind Utility Classes ── */
+html.dark,
+body.dark-theme {
+  // Main layout container background
+  main.bg-white {
+    background-color: var(--base-color-primary) !important;
+  }
+
+  // Cards, forms, modals, tables, and dialog backgrounds
+  .bg-white {
+    background-color: var(--component-color-secondary) !important;
+  }
+
+  // Hover states and zebra striping backgrounds
+  .bg-gray-50,
+  .bg-gray-100,
+  .hover\:bg-gray-50:hover,
+  .hover\:bg-gray-100:hover {
+    background-color: var(--component-color-tertiary) !important;
+  }
+
+  // Text color adjustments for readability
+  .text-gray-900,
+  .text-gray-800,
+  .text-gray-700,
+  .text-black {
+    color: var(--text-color-primary) !important;
+  }
+
+  .text-gray-600,
+  .text-gray-500 {
+    color: var(--text-color-quaternary) !important;
+  }
+
+  // Main page headers and dialog titles overrides
+  .text-\[\#3b4754\] {
+    color: var(--text-color-primary) !important;
+  }
+
+  // Link overrides (e.g., Back to search, Promote)
+  .text-\[\#4a77b4\] {
+    color: var(--text-color-link) !important;
+  }
+
+  // Border color adjustments
+  .border-gray-200,
+  .border-gray-300,
+  .border-gray-400,
+  .border {
+    border-color: #424242 !important;
+  }
+
+  // Raw input, textarea, and select elements
+  input,
+  textarea,
+  select {
+    background-color: var(--component-color-secondary) !important;
+    color: var(--text-color-primary) !important;
+    border-color: #424242 !important;
+  }
+  
+  input:focus,
+  textarea:focus,
+  select:focus {
+    outline: none !important;
+    border-color: var(--component-color-highlight) !important;
+  }
+
+  // Overriding tailwind input/textarea background classes
+  textarea.bg-gray-200,
+  textarea.bg-gray-100,
+  input.bg-gray-100,
+  select.bg-gray-100,
+  input.bg-gray-50,
+  select.bg-gray-50 {
+    background-color: var(--component-color-secondary) !important;
+    color: var(--text-color-primary) !important;
+  }
+
+  // Alert/Warning boxes styling (transparent with light-colored texts)
+  .bg-red-50,
+  .hover\:bg-red-50:hover {
+    background-color: rgba(239, 68, 68, 0.15) !important;
+    border-color: #ef4444 !important;
+  }
+  .text-red-700 {
+    color: #f87171 !important;
+  }
+  
+  .bg-amber-50,
+  .hover\:bg-amber-50:hover {
+    background-color: rgba(245, 158, 11, 0.15) !important;
+    border-color: #f59e0b !important;
+  }
+  .text-amber-700,
+  .text-amber-600 {
+    color: #fbbf24 !important;
+  }
+
+  .bg-blue-50,
+  .hover\:bg-blue-50:hover {
+    background-color: rgba(59, 130, 246, 0.15) !important;
+    border-color: #3b82f6 !important;
+  }
+  .text-blue-700 {
+    color: #60a5fa !important;
+  }
+
+  .bg-purple-50,
+  .hover\:bg-purple-50:hover {
+    background-color: rgba(168, 85, 247, 0.15) !important;
+    border-color: #a855f7 !important;
+  }
+  .text-purple-600 {
+    color: #c084fc !important;
+  }
+
+  // Ace Editor dark overrides
+  .ace_editor {
+    background-color: var(--base-color-secondary) !important;
+    color: #cccccc !important;
+    border-color: #424242 !important;
+
+    .ace_gutter {
+      background-color: var(--component-color-tertiary) !important;
+      color: #888888 !important;
+    }
+
+    .ace_scroller {
+      background-color: var(--base-color-secondary) !important;
+    }
+
+    .ace_gutter-active-line,
+    .ace_marker-layer .ace_active-line {
+      background: #2e3033 !important;
+    }
+  }
+
+  // Custom sweetalert or popover style adjustments
+  .swal2-popup {
+    background: var(--component-color-secondary) !important;
+    color: var(--text-color-primary) !important;
+    border: 1px solid #424242 !important;
+
+    .swal2-title,
+    .swal2-html-container {
+      color: var(--text-color-primary) !important;
+    }
+  }
+}
+
+

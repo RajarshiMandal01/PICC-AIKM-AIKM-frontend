@@ -1,0 +1,30 @@
+{
+    "type": "assembler",
+    "module": {
+    "name": "module",
+    "display": "Module",
+    "element-type": "object",
+    "elements":[
+
+        {
+            "import": "basic-rest"
+        
+        },
+        {
+            "import": "dirspec"
+        },
+        {
+            "name": "propertyfiles",
+            "display": "Property Files",
+            "element-type": "list"
+        },
+        {
+            "import": "log42j"
+        },
+        {
+            "import": "assembly-lines"
+        }
+       
+    ]
+    }
+}

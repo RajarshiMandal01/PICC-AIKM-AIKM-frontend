@@ -1,0 +1,1 @@
+export type ComponentStatsItem = [string, string, number];

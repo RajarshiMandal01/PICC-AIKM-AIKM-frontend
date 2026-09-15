@@ -1,0 +1,43 @@
+{
+    "name": "properties",
+    "display": "Properties",
+    "element-type": "object",
+    "elements":[
+
+        {
+            "name": "config_gmd_fixedrate",
+            "display": "Config GMD Fixed Rate",
+            "element-type": "string"
+        },
+        {
+            "name": "spring_config_import",
+            "display": "Spring Config Import",
+            "element-type": "string"
+        },
+        {
+            "name": "spring_cloud_config_uri",
+            "display": "Spring Cloud Config URI",
+            "element-type": "string"
+        },
+        {
+            "name": "spring_application_name",
+            "display": "Spring Application Name",
+            "element-type": "string"
+        },
+        {
+            "name": "spring_cloud_config_label",
+            "display": "Spring Cloud Config Label",
+            "element-type": "string"
+        },
+        {
+            "name": "spring_cloud_config_profile",
+            "display": "Spring Cloud Config Profile",
+            "element-type": "string"
+        },
+        {
+            "name": "bscs_base_url",
+            "display": "BSCS Base URL",
+            "element-type": "string"
+        }
+    ]
+}

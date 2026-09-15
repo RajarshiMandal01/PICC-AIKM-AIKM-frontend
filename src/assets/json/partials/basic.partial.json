@@ -1,0 +1,32 @@
+{
+  "name": "basic",
+  "display": "Basic",
+  "element-type": "object",
+  "elements": [
+    {
+      "name": "groupId",
+      "display": "Group Id",
+      "element-type": "string"
+    },
+    {
+      "name": "artifactId",
+      "display": "Artifact Id",
+      "element-type": "string"
+    },
+    {
+      "name": "version",
+      "display": "Version",
+      "element-type": "string"
+    },
+    {
+      "name": "packaging",
+      "display": "Packaging",
+      "element-type": "string"
+    },
+    {
+      "name": "modulename",
+      "display": "Module Name",
+      "element-type": "string"
+    }
+  ]
+}

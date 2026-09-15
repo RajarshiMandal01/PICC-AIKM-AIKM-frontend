@@ -1,0 +1,14 @@
+{
+  "values":[
+
+      {
+        "name":"read"
+      },
+      {
+          "name":"write"
+      },
+      {
+          "name":"update"
+      }
+  ]
+}

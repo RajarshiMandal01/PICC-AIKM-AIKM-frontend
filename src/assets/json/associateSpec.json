@@ -1,0 +1,68 @@
+{
+     "bbcomp_ang":{
+         "compspec_ang_tmpl":
+             {
+                 "hasAssociate":true,
+                 "associateSpec":
+                     {
+                         "specId":"dnd",
+                         "type":"launch",
+                         "text":"Click here to open",
+                         "specValue":["custom-angular-ui"],
+                         "onClick":"$dndUrl?id=$reqId&tmpl=angularjs"
+                     }
+                 
+             }
+         
+     },
+     "bbcomp_bshtml":{
+        "compspec_htm_tmpl":
+            {
+                "hasAssociate":true,
+                "associateSpec":
+                    {
+                        "specId":"dnd",
+                        "type":"launch",
+                        "text":"Click here to open",
+                        "specValue":["custom-angular-ui"],
+                        "onClick":"$dndUrl?id=$reqId&tmpl=html"
+                    }
+                
+            }
+        
+    },
+    "bbcomp_react":{
+        "compspec_htm_tmpl":
+            {
+                "hasAssociate":true,
+                "associateSpec":
+                    {
+                        "specId":"dnd",
+                        "type":"launch",
+                        "text":"Click here to open",
+                        "specValue":["custom-angular-ui"],
+                        "onClick":"$dndUrl?id=$reqId&tmpl=html"
+                    }
+                
+            }
+        
+    },
+     "bbcomp_bus_dashboard":{
+        "compspec_busj_uitmpl":
+            {
+                "hasAssociate":true,
+                "associateSpec":
+                    {
+                        "specId":"dashboard",
+                        "type":"launch",
+                        "text":"Click here to open",
+                        "specValue":["real_dash_tmpl_1","real_dash_tmpl_2"],
+                        "onClick":"$dashBoardUrl?id=$reqId"
+                    }
+                
+            }
+        
+     }
+     
+ }
+

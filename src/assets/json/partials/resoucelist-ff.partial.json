@@ -1,0 +1,193 @@
+{
+    "name": "resourcelist",
+    "display": "Resource List",
+    "element-type": "array",
+    "elements": [
+        {
+          "name": "resources",
+          "display": "Resource List",
+          "element-type": "string"
+        },
+        {
+          "name": "models",
+          "display": "Models",
+          "element-type": "array",
+          "elements":[
+              {
+                  "name": "name",
+                  "display": "Name",
+                  "element-type": "string"
+              },
+              {
+                  "name": "attribute",
+                  "display": "Attribute",
+                  "element-type": "array",
+                  "elements":[
+                      {
+                          "name": "name",
+                          "display": "Name",
+                          "element-type": "string"
+                      },
+                      {
+                          "name": "type",
+                          "display": "Type",
+                          "element-type": "string"
+                      }
+                  ]
+              }
+          ]
+        },
+        {
+          "name": "command",
+          "display": "Command",
+          "element-type": "array",
+          "elements":[
+              {
+                  "name": "name",
+                  "display": "Name",
+                  "element-type": "string"
+              },
+              {
+                  "name": "extends",
+                  "display": "Extends",
+                  "element-type": "string"
+              }
+          ]
+      },
+      {
+          "name": "controller",
+          "display": "Controller",
+          "element-type": "array",
+          "elements":[
+              {
+                  "name": "name",
+                  "display": "Name",
+                  "element-type": "string"
+              },
+              {
+                  "name": "extends",
+                  "display": "Extends",
+                  "element-type": "string"
+              },
+              {
+                  "name": "implements",
+                  "display": "Implements",
+                  "element-type": "string"
+              },
+              {
+                  "name": "basepath",
+                  "display": "Base Path",
+                  "element-type": "string"
+              },
+              {
+                "name": "service_class",
+                "display": "Service Class",
+                "element-type": "string"
+              },
+              {
+                  "name": "methodconfig",
+                  "display": "Method Config",
+                  "element-type": "array",
+                  "elements":[
+                      {
+                          "name": "methodName",
+                          "display": "Method Name",
+                          "element-type": "string"
+                      },
+                      {
+                          "name": "methodType",
+                          "display": "Method Type",
+                          "element-type": "string"
+                      },
+                      {
+                          "name": "Description",
+                          "display": "Description",
+                          "element-type": "string"
+                      },
+                      {
+                          "name": "path",
+                          "display": "Path",
+                          "element-type": "string"
+                      },
+                      {
+                        "name": "override",
+                        "display": "Override",
+                        "element-type": "string"
+                      },
+                      {
+                          "name": "requests",
+                          "display": "Requests",
+                          "element-type": "array",
+                          "elements":[
+                              {
+                                  "name": "json-model",
+                                  "display": "JSON Model",
+                                  "element-type": "string"
+                              },
+                              {
+                                  "name": "annotation",
+                                  "display": "Annotation",
+                                  "element-type": "string"
+                              },
+                              {
+                                  "name": "inputparam",
+                                  "display": "Input Param",
+                                  "element-type": "string"
+                              }
+                          ]
+                      },
+                      {
+                          "name": "response",
+                          "display": "Response",
+                          "element-type": "object",
+                          "elements":[
+                              {
+                                  "name": "type",
+                                  "display": "Type",
+                                  "element-type": "string"
+                              },
+                              {
+                                  "name": "json-model",
+                                  "display": "JSON Model",
+                                  "element-type": "string"
+                              },
+                              {
+                                  "name": "code",
+                                  "display": "Code",
+                                  "element-type": "string"
+                              },
+                              {
+                                  "name": "message",
+                                  "display": "Message",
+                                  "element-type": "string"
+                              }
+                          ]
+                      },
+                      {
+                          "name": "exceptions",
+                          "display": "Exceptions",
+                          "element-type": "array",
+                          "elements":[
+                              {
+                                  "name": "code",
+                                  "display": "Code",
+                                  "element-type": "string"
+                              },
+                              {
+                                  "name": "expmessage",
+                                  "display": "Exception Message",
+                                  "element-type": "string"
+                              },
+                              {
+                                  "name": "expclass",
+                                  "display": "Exception Class",
+                                  "element-type": "string"
+                              }
+                          ]
+                      }
+                  ]
+              }
+          ]
+      }
+    ]
+  }

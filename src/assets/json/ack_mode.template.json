@@ -1,0 +1,22 @@
+{
+  "values":[
+
+      {
+        "name":"MANUAL_IMMEDIATE"
+
+      },
+      {
+          "name":"BATCH"
+
+      },
+      {
+        "name":"MANUAL"
+
+    },
+    {
+      "name":"RECORD"
+
+  }
+
+  ]
+}

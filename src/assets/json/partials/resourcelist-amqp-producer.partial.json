@@ -1,0 +1,386 @@
+{
+  "name": "resourcelist",
+  "display": "Resource List",
+  "element-type": "array",
+  "elements": [
+    {
+      "name": "resources",
+      "display": "Resources",
+      "element-type": "string",
+      "validations": [{"required": true},{"pattern": true, "pattern-value": "[a-z][a-zA-Z0-9]*" }],
+      "help-text": "This is mandtory field. The first character must be an alphabet and should be lowercase"
+    },
+    {
+      "name": "models",
+      "display": "Models",
+      "element-type": "array",
+      "mandatory": true,
+      "elements": [
+        {
+          "name": "name",
+          "display": "Name",
+          "element-type": "string",
+          "help-text": "Mandatory field & has to start with capital letter",
+          "validations": [{"required": true},{"pattern": true, "pattern-value": "[A-Z][a-zA-Z]*"}]
+        },
+        {
+          "name": "model",
+          "display": "Model",
+          "element-type": "string",
+          "input-type":"textarea",
+          "editor": true,
+          "editorMode": "json",
+          "help-text": "This is a sample model structure, please modify as per your need.",
+          "def-val": {"rootclass":"MyModelTO","schema":{"$schema":"http://json-schema.org/draft-04/schema#","type":"object","properties":{"id":{"type":"string"},"firstField":{"type":"string"},"secondField":{"type":"string"},"description":{"type":"string"}}}}
+        }
+      ]
+    },
+    {
+      "name": "exceptions",
+      "display": "Exceptions",
+      "element-type": "array",
+      "mandatory": true,
+      "elements": [
+        {
+          "name": "name",
+          "display": "Name",
+          "element-type": "string",
+          "help-text": "Mandatory field & has to start with capital letter",
+          "validations": [{"required": true},{"pattern": true, "pattern-value": "[A-Z][a-zA-Z]*"}]
+        },
+        {
+          "name": "extends",
+          "display": "Extends",
+          "element-type": "string",
+          "default-val": "Exception",
+          "read-only": true
+        }
+      ]
+    },
+    {
+      "name": "queueconfig",
+      "display": "Queue Config",
+      "element-type": "object",
+      "elements": [
+        {
+          "name": "exchange",
+          "display": "Exchange",
+          "element-type": "object",
+          "elements": [
+            {
+              "name": "name",
+              "display": "Name",
+              "element-type": "string",
+              "help-text": "For eg: my_direct_excng"
+            },
+            {
+              "name": "type",
+              "display": "Type",
+              "element-type": "string",
+              "help-text": "For eg: direct"
+            },
+            {
+              "name": "durable",
+              "display": "Durable",
+              "element-type": "string",
+              "default-val": "true",
+              "input-type": "select"
+            },
+            {
+              "name": "autodelete",
+              "display": "Auto Delete",
+              "element-type": "string",
+              "default-val": "true",
+              "input-type": "select"
+            }
+          ]
+        },
+        {
+          "name": "queues",
+          "display": "Queues",
+          "element-type": "array",
+          "elements": [
+            {
+              "name": "name",
+              "display": "Name",
+              "element-type": "string",
+              "help-text": "For eg: queue_1"
+            },
+            {
+              "name": "durable",
+              "display": "Durable",
+              "element-type": "string",
+              "default-val": "true",
+              "input-type": "select"
+            },
+            {
+              "name": "exclusive",
+              "display": "Exclusive",
+              "element-type": "string",
+              "default-val": "false",
+              "input-type": "select"
+            },
+            {
+              "name": "autodelete",
+              "display": "Auto Delete",
+              "element-type": "string",
+              "default-val": "true",
+              "input-type": "select"
+            },
+            {
+              "name": "routing_key",
+              "display": "Routing Key",
+              "element-type": "string",
+              "help-text": "For eg: key1"
+            },
+            {
+              "name": "dl_exchange",
+              "display": "DL Exchange",
+              "element-type": "string",
+              "default-val": "dl_direct_excng",
+              "help-text": "Should be same as dl_exchange in dl_queue level"
+            }
+          ]
+        },
+        {
+          "name": "dl_queue",
+          "display": "DL Queue",
+          "element-type": "object",
+          "elements":[
+            {
+              "name": "name",
+              "display": "Name",
+              "element-type": "string",
+              "help-text": "For eg: my_dlq"
+            },
+            {
+              "name": "durable",
+              "display": "Durable",
+              "element-type": "string",
+              "default-val": "true",
+              "input-type": "select"
+            },
+            {
+              "name": "exclusive",
+              "display": "Exclusive",
+              "element-type": "string",
+              "default-val": "true",
+              "input-type": "select"
+            },
+            {
+              "name": "autodelete",
+              "display": "Auto Delete",
+              "element-type": "string",
+              "default-val": "true",
+              "input-type": "select"
+            },
+            {
+              "name": "dl_exchange",
+              "display": "DL Exchange",
+              "element-type": "object",
+              "elements":[
+                {
+                  "name": "name",
+                  "display": "Name",
+                  "element-type": "string",
+                  "default-val": "dl_direct_excng",
+                  "help-text":"Should be same as dl_exchange in dl_queue level"
+                },
+                {
+                  "name": "durable",
+                  "display": "Durable",
+                  "element-type": "string",
+                  "default-val": "true",
+              "input-type": "select"
+                },
+                {
+                  "name": "autodelete",
+                  "display": "Auto Delete",
+                  "element-type": "string",
+                  "default-val": "true",
+                  "input-type": "select"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "msg_converter",
+          "display": "Message Converter",
+          "element-type": "string",
+          "default-val": "Jackson2JsonMessageConverter"
+        },
+        {
+          "name": "publisher_confirm",
+          "display": "Publisher Confirm",
+          "element-type": "string",
+          "default-val": "true",
+          "input-type": "select"
+        },
+
+          {
+            "name": "publisher_return",
+            "display": "Publisher Return",
+            "element-type": "string",
+            "default-val": "false",
+          "input-type": "select"
+          }
+      ]
+    },
+    {
+      "name": "services",
+      "display": "Services",
+      "element-type": "array",
+      "elements": [
+        {
+          "name": "name",
+          "display": "Name",
+          "element-type": "string",
+          "help-text": "Mandatory field & has to start with capital letter",
+          "validations": [{"required": true},{"pattern": true, "pattern-value": "[A-Z][a-zA-Z]*"}]
+        },
+        {
+          "name": "type",
+          "display": "Type",
+          "element-type": "string",
+          "default-val": "publisher"
+
+        },
+        {
+          "name": "methodconfig",
+          "display": "Method Config",
+          "element-type": "array",
+          "elements" :[
+            {
+              "name": "methodName",
+              "display": "Method Name",
+              "element-type": "string",
+              "help-text": "Mandatory field & has to start with small letter",
+              "validations": [{"required": true},{"pattern": true, "pattern-value": "[a-z][a-zA-Z]*" }]
+            },
+            {
+              "name": "Description",
+              "display": "Description",
+              "element-type": "string",
+              "help-text":"For eg: post MyModel message to queue"
+
+            },
+            {
+              "name": "requests",
+              "display": "Requests",
+              "element-type": "object",
+              "elements":[
+                {
+                  "name": "type",
+                  "display": "Type",
+                  "element-type": "string",
+                  "input-type": "select",
+                  "help-text": "Mandatory field & has to start with capital letter. It is the datatype, for eg. String, Double, Float etc",
+                  "validations": [{"required": true},{"pattern": true, "pattern-value": "[A-Z][a-zA-Z0-9]*" }]
+                },
+                {
+                  "name": "var",
+                  "display": "Var",
+                  "element-type": "string",
+                  "help-text": "Mandatory field & has to start with small letter",
+                  "validations": [{"required": true},{"pattern": true, "pattern-value": "[a-z][a-zA-Z0-9]*" }]
+                }
+              ]
+            },
+            {
+              "name": "response",
+              "display": "Response",
+              "element-type": "object",
+              "elements":[
+                {
+                  "name": "type",
+                  "display": "Type",
+                  "element-type": "string",
+                  "help-text": "For eg: void"
+                }
+              ]
+            },
+            {
+              "name": "routing_key",
+              "display": "Routing Key",
+              "element-type": "string",
+              "help-text": "For eg: key1"
+            },
+            {
+              "name": "message_headers",
+              "display": "Message Headers",
+              "element-type": "array",
+              "elements":[
+                {
+                  "name": "key",
+                  "display": "Key",
+                  "element-type": "string",
+                  "help-text": "For eg: hkey1"
+                },
+                {
+                  "name": "value",
+                  "display": "Value",
+                  "element-type": "string",
+                  "help-text": "For eg: hval1"
+                }
+              ]
+            },
+            {
+              "name": "message_priority",
+              "display": "Message Priority",
+              "element-type": "string",
+              "validations": [{"required": true},{"pattern": true, "pattern-value": "[0-9]+"}],
+              "help-text": "Has to be a number value only"
+            },
+            {
+              "name": "exceptions",
+              "display": "Exceptions",
+              "element-type": "array",
+              "mandatory": true,
+              "elements":[
+                {
+                  "name":"code",
+                  "display":"Message Code",
+                  "element-type": "string",
+                  "help-text": "For eg: 404"
+                },
+                {
+                  "name":"expmesseage",
+                  "display":"Exception Message",
+                  "element-type": "string",
+                  "help-text": "For eg: Not found"
+                },
+                {
+                  "name":"expclass",
+                  "display":"Exception Class",
+                  "element-type": "string",
+                  "input-type": "select",
+                  "help-text": "For eg: MyModelNotFoundException"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "util",
+      "display": "Util",
+      "element-type": "array",
+      "elements": [
+        {
+          "name":"name",
+          "display":"Name",
+          "element-type": "string",
+          "help-text": "For eg: MyModelTOMapper"
+        },
+        {
+          "name":"modelFirst",
+          "display":"Model First",
+          "element-type": "string",
+          "input-type": "select"
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,240 @@
+[
+  {
+    "bb_id": "bb_gen",
+    "bbName": "General Section Details",
+    "bbDesc": "General Section for Git Location",
+    "bbStatus": "active",
+    "compHelp": "/docs/nnp/lcnc/general-section-details",
+    "bbItemseq": "0",
+    "bbInfo": [
+      {
+          "name": "title",
+          "display": "Title",
+          "type": "text",
+          "formControl":"reqTitle"
+      },
+      {
+        "name": "accountName",
+        "display": "Account Name",
+        "type": "text",
+        "formControl":"reqAcc"
+
+    },
+      {
+        "name": "projectName",
+        "display": "Project Name",
+        "type": "text",
+        "formControl":"reqProj"
+    },
+    {
+        "name": "actionDetails",
+        "display": "Action Details",
+        "type": "text",
+        "formControl":"reqDtl"
+    }
+  ],
+    "bbComp": [
+      {
+        "compId": "bbcomp_gen",
+        "compName": "Git Specification",
+        "compDesc": "Git specification for project code",
+        "compStatus": "active",
+        "bbCompSpec": [],
+        "dependentComp": []
+      }
+    ]
+  },
+  {
+    "bb_id": "bb_UI",
+    "bbName": "User Experience Framework",
+    "bbDesc": "UI component available for code generation",
+    "bbStatus": "active",
+    "compHelp": "/docs/nnp/lcnc/user-experience-framework",
+    "bbItemseq": "1",
+    "bbComp": [
+      {
+        "compId": "bbcomp_ang",
+        "compName": "AngularJS",
+        "compDesc": "Select to generate code for Angular",
+        "compStatus": "active",
+        "compHelp": "/docs/nnp/lcnc/angularjs",
+        "bbCompSpec": [],
+        "dependentComp": [
+          {
+            "compId": "bbcomp_bsjs",
+            "compName": "BootstarpJS",
+            "compDesc": "Select to generate code for Angular Bootstrap or React Bootstrap",
+            "compStatus": "inactive",
+            "bbCompSpec": [],
+            "dependentComp": []
+          }
+        ]
+      },
+      {
+        "compId": "bbcomp_bshtml",
+        "compName": "HTML and CSS",
+        "compDesc": "Select to generate code for HTML and CSS",
+        "compStatus": "active",
+        "compHelp": "/docs/nnp/lcnc/html-and-css",
+        "bbCompSpec": [],
+        "dependentComp": []
+      },
+      {
+        "compId": "bbcomp_react",
+        "compName": "Mobile Frameworks",
+        "compDesc": "Select to generate code for React",
+        "compStatus": "active",
+        "compHelp": "/docs/nnp/lcnc/mobile-frameworks",
+        "bbCompSpec": [],
+        "dependentComp": [
+          {
+            "compId": "bbcomp_bsjs",
+            "compName": "BootstarpJS",
+            "compDesc": "Select to generate code for Angular Bootstrap or React Bootstrap",
+            "compStatus": "inactive",
+            "bbCompSpec": [],
+            "dependentComp": []
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "bb_id": "bb_BSJAVA",
+    "bbName": "Business Service Framework",
+    "bbDesc": "Spring boot available for code generation",
+    "bbStatus": "active",
+    "compHelp": "/docs/nnp/enterprise-low-code",
+    "bbItemseq": "2",
+    "bbComp": [
+      {
+        "compId": "bbcomp_node",
+        "compName": "NodeJS",
+        "compDesc": "Select to generate code for NodeJS",
+        "compStatus": "active",
+        "compHelp": "/docs/nnp/enterprise-low-code",
+        "bbCompSpec": [],
+        "dependentComp": []
+      },
+      {
+        "compId": "bbcomp_spboot",
+        "compName": "Spring-Boot",
+        "compDesc": "Select to generate code for Springboot",
+        "compStatus": "active",
+        "compHelp": "/docs/nnp/enterprise-low-code",
+        "bbCompSpec": [],
+        "dependentComp": []
+      },
+      {
+        "compId": "bbcomp_spcamle",
+        "compName": "Spring-Camel Integration",
+        "compDesc": "Select to generate Spring integrated with Camel",
+        "compStatus": "active",
+        "compHelp": "/docs/nnp/enterprise-low-code",
+        "bbCompSpec": [],
+        "dependentComp": []
+      }
+    ]
+  },
+
+  {
+    "bb_id": "bb_MSJAVA",
+    "bbName": "Comprehensive Micro Service Framework",
+    "bbDesc": "Node Express Mongo code generation",
+    "bbStatus": "active",
+    "compHelp": "/docs/nnp/enterprise-low-code",
+    "bbItemseq": "4",
+    "bbComp": [
+      {
+        "compId": "bbcomp_ms",
+        "compName": "Microservice Springboot Assembler",
+        "compDesc": "Generalized Spring based Microservice",
+        "compStatus": "active",
+        "compHelp": "/docs/nnp/lcnc/microservice-springboot-assembler",
+        "bbCompSpec": [],
+        "dependentComp": []
+      }
+
+    ]
+  },
+  {
+    "bb_id": "bb_Int_sol",
+    "bbName": "Integration Orchestration Solution",
+    "bbDesc": "Integration Orchestration Solution Generation",
+    "bbStatus": "active",
+    "compHelp": "/docs/nnp/lcnc/api-orchestration",
+    "bbItemseq": "8",
+    "bbComp": [
+
+      {
+        "compId": "bbcomp_api_orch_nr",
+        "compName": "API Orchestration",
+        "compDesc": "API Orchestration to configure",
+        "compStatus": "active",
+        "compHelp": "/docs/nnp/lcnc/api-orchestration",
+        "bbCompSpec": [],
+        "dependentComp": []
+      },
+
+      {
+        "compId": "bbcomp_api_ndeploy",
+        "compName": "Deploy API Orchestration",
+        "compDesc": "API Orchestration to Deploy",
+        "compStatus": "active",
+        "compHelp": "/docs/nnp/lcnc/api-orchestration",
+        "bbCompSpec": [],
+        "dependentComp": []
+      }
+    ]
+  },
+  {
+    "bb_id": "bb_IOT",
+    "bbName": "IoT Framework",
+    "bbDesc": "UI Component for IOT framework generation",
+    "bbStatus": "active",
+    "compHelp": "/docs/nnp/lcnc/lcnc-iot-orchestration",
+    "bbItemseq": "7",
+    "bbComp": [
+
+      {
+        "compId": "bbcomp_iot",
+        "compName": "IoT Orchestration",
+        "compDesc": "IoT Orchestration to configure",
+        "compStatus": "active",
+        "compHelp": "/docs/nnp/lcnc/lcnc-iot-orchestration",
+        "bbCompSpec": [],
+        "dependentComp": []
+      },
+      {
+        "compId": "bbcomp_iot_ndeploy",
+        "compName": "Deploy IoT Orchestration",
+        "compDesc": "IoT Orchestration to Deploy",
+        "compStatus": "active",
+        "compHelp": "/docs/nnp/lcnc/lcnc-deploy-iot-orchestration",
+        "bbCompSpec": [],
+        "dependentComp": []
+      }
+    ]
+  },
+  {
+    "bb_id": "bb_BUS",
+    "bbName": "Telco Business Component Framework",
+    "bbDesc": "Business Solutions",
+    "bbStatus": "active",
+    "compHelp": "/docs/nnp/lcnc/tm-forum-standard-api",
+    "bbItemseq": "5",
+    "bbComp": [
+      {
+        "compId": "bbcomp_bus_api",
+        "compName": "TM Forum Standard API",
+        "compDesc": "TM Forum Standard API",
+        "isAPI":true,
+        "compStatus": "active",
+        "compHelp": "/docs/nnp/lcnc/tm-forum-standard-api",
+        "bbCompSpec": [],
+        "dependentComp": []
+      }
+    ]
+  }
+
+]

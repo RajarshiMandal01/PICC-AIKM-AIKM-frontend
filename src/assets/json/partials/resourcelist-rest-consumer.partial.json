@@ -1,0 +1,293 @@
+{
+    "name": "resourcelist",
+    "display": "Resource List",
+    "element-type": "array",
+    "elements": [
+      {
+        "name":"resources",
+        "display":"Resources",
+        "element-type": "string",
+        "validations": [{"required": true},{"pattern": true, "pattern-value": "[a-z][a-zA-Z0-9]*" }],
+        "help-text": "This is mandtory field. The first character must be an alphabet and should be lowercase"
+      },
+      {
+        "name":"models",
+        "display":"Models",
+        "element-type": "array",
+        "mandatory": true,
+        "elements":[
+          {
+            "name":"name",
+            "display":"Name",
+            "element-type": "string",
+            "help-text": "Mandatory field & has to start with capital letter",
+            "validations": [{"required": true},{"pattern": true, "pattern-value": "[A-Z][a-zA-Z]*"}]
+          },
+          {
+            "name":"model",
+            "display":"Model",
+            "element-type": "string",
+            "input-type":"textarea",
+            "editor": true,
+            "editorMode": "json",
+            "help-text": "This is a sample model structure, please modify as per your need.",
+            "def-val": {"rootclass":"MyConModelTO","schema":{"$schema":"http://json-schema.org/draft-04/schema#","type":"object","properties":{"id":{"type":"string"},"firstField":{"type":"string"},"secondField":{"type":"string"},"description":{"type":"string"}}}}
+          }
+        ]
+      },
+
+      {
+        "name":"exceptions",
+        "display":"Exceptions",
+        "element-type": "array",
+        "mandatory": true,
+         "elements":[
+          {
+            "name":"name",
+            "display":"Name",
+            "element-type": "string",
+            "help-text": "Mandatory field & has to start with capital letter",
+            "validations": [{"required": true},{"pattern": true, "pattern-value": "[A-Z][a-zA-Z]*"}]
+          },
+          {
+            "name":"extends",
+            "display":"Extends",
+            "element-type": "string",
+            "default-val": "RuntimeException",
+            "read-only": true
+          }
+
+         ]
+
+      },
+
+      {
+        "name":"services",
+        "display":"Services",
+        "element-type": "array",
+        "elements":[
+          {
+            "name":"name",
+            "display":"Name",
+            "element-type": "string",
+            "help-text": "Mandatory field & has to start with capital letter",
+            "validations": [{"required": true},{"pattern": true, "pattern-value": "[A-Z][a-zA-Z]*"}]
+          },
+          {
+            "name":"type",
+            "display":"Type",
+            "element-type": "string",
+            "help-text": "For eg: read OR write"
+          },
+          {
+            "name":"methodconfig",
+            "display":"Method Config",
+            "element-type": "array",
+            "elements":[
+              {
+                "name":"methodName",
+                "display":"Method Name",
+                "element-type": "string",
+                "help-text": "Mandatory field & has to start with small letter",
+                "validations": [{"required": true},{"pattern": true, "pattern-value": "[a-z][a-zA-Z]*" }]
+
+              },
+              {
+                "name":"methodtype",
+                "display":"Method Type",
+                "element-type": "string",
+                "input-type": "select",
+                "default-val": "GET"
+
+              },
+              {
+                "name":"feature",
+                "display":"Feature",
+                "element-type": "string",
+                "input-type": "select",
+                "default-val": "read"
+
+              },
+              {
+                "name":"Description",
+                "display":"Description",
+                "element-type": "string",
+                "help-text": "For eg: read My Con Model by id"
+
+              },
+
+              {
+                "name":"requests",
+                "display":"Requests",
+                "element-type": "array",
+                "elements":[
+
+                  {
+                    "name":"inputparam",
+                    "display":"Input Param",
+                    "element-type": "string",
+                    "help-text": "Format: <Datatype> <variable> for eg. String id"
+                  }
+                ]
+              },
+              {
+                "name":"response",
+                "display":"Response",
+                "element-type": "object",
+                "elements":[
+                  {
+                    "name":"type",
+                    "display":"Type",
+                    "element-type": "string",
+                    "help-text":"For eg: MyConModelTO OR MyConModelTO[] etc."
+                  }
+                ]
+              },
+              {
+                "name":"exchangeconfig",
+                "display":"Exchange Config",
+                "element-type": "object",
+                "elements":[
+                  {
+                    "name":"schema",
+                    "display":"Schema",
+                    "element-type": "string",
+                    "default-val": "http"
+                  },
+                  {
+                    "name":"host",
+                    "display":"Host",
+                    "element-type": "string",
+                    "default-val": "localhost",
+                    "help-text": "Can be DNS name or IP address",
+                    "validations": [{"pattern": true, "pattern-value": "([a-zA-Z0-9]|[a-zA-Z0-9][a-zA-Z0-9-]{0,61}[a-zA-Z0-9])(.([a-zA-Z0-9]|[a-zA-Z0-9][a-zA-Z0-9-]{0,61}[a-zA-Z0-9]))*"}]
+
+                  },
+                  {
+                    "name":"port",
+                    "display":"Port",
+                    "element-type": "string",
+                    "default-val": "9090",
+                    "help-text": "Should be a valid port number, cannot be more than 65535",
+                    "validations": [{"pattern": true, "pattern-value": "([1-9][0-9]{0,3}|[1-5][0-9]{4}|6[0-4][0-9]{3}|65[0-4][0-9]{2}|655[0-2][0-9]|6553[0-5])"}]
+
+                  },
+                  {
+                    "name":"path",
+                    "display":"Path",
+                    "element-type": "string",
+                    "default-val": "/api/v1/myModel/{id}"
+
+                  },
+                  {
+                    "name":"pathvariable",
+                    "display":"Path Variable",
+                    "element-type": "string",
+                    "default-val": "id"
+
+                  },
+                  {
+                    "name":"queryparams",
+                    "display":"Query Params",
+                    "element-type": "array",
+                    "elements":[
+                        {
+                            "name":"key",
+                            "display":"Key",
+                            "element-type": "string",
+                            "help-text":"For eg: key"
+                        },
+                        {
+                            "name":"val",
+                            "display":"Value",
+                            "element-type": "string",
+                            "help-text":"For eg: valueOfKey"
+                        }
+
+                    ]
+                  }
+                ]
+              },
+              {
+                "name":"headerconfig",
+                "display":"Header Config",
+                "element-type": "array",
+                "elements":[
+
+                    {
+                        "name":"headerName",
+                        "display":"Header Name",
+                        "element-type": "string",
+                        "default-val": "Accept"
+
+                    },
+                    {
+                        "name":"headerValue",
+                        "display":"Header Value",
+                        "element-type": "string",
+                        "default-val": "MediaType.APPLICATION_JSON_VALUE"
+
+                      }
+                ]
+              },
+              {
+                "name":"exceptions",
+                "display":"Exceptions",
+                "element-type": "array",
+                "mandatory": true,
+                "elements":[
+                  {
+                    "name":"code",
+                    "display":"Message Code",
+                    "element-type": "string",
+                    "help-text": "For eg: 404"
+
+                  },
+                  {
+                    "name":"expmesseage",
+                    "display":"Exception Message",
+                    "element-type": "string",
+                    "help-text": "For eg: ConModel not found"
+
+                  },
+                  {
+                    "name":"expclass",
+                    "display":"Exception Class",
+                    "element-type": "string",
+                    "help-text": "For eg: ConModelNotFoundException",
+                    "input-type": "select"
+
+                  }
+
+
+                ]
+              }
+            ]
+          }
+
+        ]
+      },
+      {
+        "name":"util",
+        "display":"Util",
+        "element-type": "array",
+        "elements":[
+          {
+            "name":"name",
+            "display":"Name",
+            "element-type": "string",
+            "help-text":"For eg: MyConModelMapper"
+          },
+          {
+            "name":"modelFirst",
+            "display":"Model First",
+            "element-type": "string",
+            "input-type": "select"
+
+          }
+        ]
+      }
+
+
+    ]
+  }

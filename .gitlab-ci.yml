@@ -1,0 +1,46 @@
+
+
+variables:
+  PKG_VERSION: $NNP_COMP_IMG_VERSION
+  IMAGE_VERSION: $NNP_COMP_IMG_VERSION
+  APP_NAME: $CI_PROJECT_NAME
+  APP_LABEL: $CI_PROJECT_NAME
+  REPLICAS: 1
+  IMAGE: "${CI_REGISTRY_IMAGE}:${IMAGE_VERSION}"
+  PORT: 8080
+  SERVICE_PORT: 8080
+  NAMESPACE: "nnp-core-components"
+  SERVICE_TYPE: "NodePort"
+  REQUEST_MEMORY: "100Mi"
+  REQUEST_CPU: "50m"
+  LIMIT_MEMORY: "150Mi"
+  LIMIT_CPU: "100m"
+
+stages: 
+  - build
+  - security-tests
+  - publish
+  - test
+  - deploy
+  - post-deploy
+
+
+
+include:
+  - project: "devops-templates/build-templates"
+    ref: "main"
+    file: "node-package-build-template.yml"
+
+  - project: "devops-templates/security-templates"
+    ref: "main"
+    file: "sast-template.yaml"
+
+  - project: "devops-templates/build-templates"
+    ref: "main"
+    file: "container-build-template.yml"
+    
+  - project: "devops-templates/deploy-templates"
+    ref: "main"
+    file: "k8s-deployment-template.yaml"  
+
+

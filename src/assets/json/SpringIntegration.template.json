@@ -1,0 +1,21 @@
+{
+    "type": "spring integration",
+    "module": {
+    "name": "module",
+    "display": "Module",
+    "element-type": "object",
+    "elements": [
+
+        {
+            "import": "basic-spring-integration"
+        
+        },
+        {
+            "import": "dirspec"
+        },
+        {
+            "import": "spring-integration-config"
+        }
+    ]
+  }
+}

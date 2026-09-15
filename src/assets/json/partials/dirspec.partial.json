@@ -1,0 +1,28 @@
+{
+  "name": "dirspec",
+  "display": "Dir Spec",
+  "element-type": "object",
+  "elements": [
+    {
+      "name": "javadir",
+      "display": "Java Dir",
+      "element-type": "string",
+      "default-val": "src/main/java",
+      "read-only": true
+    },
+    {
+      "name": "propertydir",
+      "display": "Property Dir",
+      "element-type": "string",
+      "default-val": "src/main/resources",
+      "read-only": true
+    },
+    {
+      "name": "pkg",
+      "display": "Package",
+      "element-type": "string",
+      "default-val": "com.nubons.msra.component",
+      "validations": [{"required": true},{"pattern": true, "pattern-value": "(?!.[.]{2})[a-z*]+(?:.[a-z]+)+"}]
+    }
+  ]
+}

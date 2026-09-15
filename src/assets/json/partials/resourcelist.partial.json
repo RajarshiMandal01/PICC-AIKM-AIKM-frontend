@@ -1,0 +1,268 @@
+{
+  "name": "resourcelist",
+  "display": "Resource List",
+  "element-type": "array",
+  "elements": [
+    {
+      "name": "resources",
+      "display": "Resources",
+      "element-type": "string"
+    },
+    {
+      "name": "models",
+      "display": "Models",
+      "element-type": "array",
+      "elements": [
+        {
+          "name": "name",
+          "display": "Name",
+          "element-type": "string"
+        },
+        {
+          "name": "model",
+          "display": "Model",
+          "element-type": "string"
+        }
+      ]
+    },
+    {
+      "name": "exceptions",
+      "display": "Exceptions",
+      "element-type": "array",
+      "elements": [
+        {
+          "name": "name",
+          "display": "Name",
+          "element-type": "string"
+        },
+        {
+          "name": "extends",
+          "display": "Extends",
+          "element-type": "string"
+        }
+      ]
+    },
+    {
+      "name": "queueconfig",
+      "display": "Queue Config",
+      "element-type": "object",
+      "elements": [
+        {
+          "name": "dlq",
+          "display": "DLQ",
+          "element-type": "string"
+        },
+        {
+          "name": "consumer",
+          "display": "Consumer",
+          "element-type": "array",
+          "elements": [
+            {
+              "name": "messageClass",
+              "display": "Message Class",
+              "element-type": "string"
+            },
+            {
+              "name": "offset_reset",
+              "display": "Offset Reset",
+              "element-type": "string"
+            },
+            {
+              "name": "auto_commit",
+              "display": "Auto Commit",
+              "element-type": "string"
+            },
+            {
+              "name": "key_deserializer",
+              "display": "Key Deserializer",
+              "element-type": "string"
+            },
+            {
+              "name": "value_deserializer",
+              "display": "Value Deserializer",
+              "element-type": "object",
+              "elements": [
+                {
+                  "name": "type",
+                  "display": "Type",
+                  "element-type": "string"
+                },
+                {
+                  "name": "trusted_pkg",
+                  "display": "Trusted Pkg",
+                  "element-type": "string"
+                },
+                {
+                  "name": "remove_typeheaders",
+                  "display": "Remove Typeheaders",
+                  "element-type": "string"
+                }
+              ]
+            },
+            {
+              "name": "listener_container",
+              "display": "Listener Container",
+              "element-type": "object",
+              "elements": [
+                {
+                  "name": "messageClass",
+                  "display": "Message Class",
+                  "element-type": "string"
+                },
+                {
+                  "name": "ack_mode",
+                  "display": "Ack Mode",
+                  "element-type": "string"
+                },
+                {
+                  "name": "err_maxAttempt",
+                  "display": "Error Max Attempt",
+                  "element-type": "string"
+                },
+                {
+                  "name": "err_attempt_intrval",
+                  "display": "Error Attempt Intrval",
+                  "element-type": "string"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "services",
+      "display": "Services",
+      "element-type": "array",
+      "elements": [
+        {
+          "name": "name",
+          "display": "Name",
+          "element-type": "string"
+        },
+        {
+          "name": "type",
+          "display": "Type",
+          "element-type": "string"
+        },
+        {
+          "name": "methodconfig",
+          "display": "Method Config",
+          "element-type": "array",
+          "elements" :[
+            {
+              "name": "methodName",
+              "display": "Method Name",
+              "element-type": "string"
+            },
+            {
+              "name": "associatedTopic",
+              "display": "Associated Topic",
+              "element-type": "array",
+              "elements" : [
+                {
+                  "name": "name",
+                  "display": "Name",
+                  "element-type": "string"
+                },
+                {
+                  "name": "partition_count",
+                  "display": "Partition Count",
+                  "element-type": "string"
+                }
+              ]
+            },
+            {
+              "name": "group_id",
+              "display": "Group Id",
+              "element-type": "string"
+            },
+            {
+              "name": "Description",
+              "display": "Description",
+              "element-type": "string"
+            },
+            {
+              "name": "ack",
+              "display": "Ack",
+              "element-type": "string"
+            },
+            {
+              "name": "requests",
+              "display": "Requests",
+              "element-type": "object",
+              "elements":[
+                {
+                  "name": "type",
+                  "display": "Type",
+                  "element-type": "string"
+                },
+                {
+                  "name": "var",
+                  "display": "Var",
+                  "element-type": "string"
+                }
+              ]
+            },
+            {
+              "name": "response",
+              "display": "Response",
+              "element-type": "object",
+              "elements":[
+                {
+                  "name": "type",
+                  "display": "Type",
+                  "element-type": "string"
+                }
+              ]
+            },
+            {
+              "name": "exceptions",
+              "display": "Exceptions",
+              "element-type": "array",
+              "elements":[
+                {
+                  "name": "code",
+                  "display": "Code",
+                  "element-type": "string"
+                },
+                {
+                  "name": "expmesseage",
+                  "display": "Exp Messeage",
+                  "element-type": "string"
+                },
+                {
+                  "name": "expclass",
+                  "display": "Exp class",
+                  "element-type": "string"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "util",
+      "display": "Util",
+      "element-type": "array",
+      "elements": [
+        {
+          "name": "name",
+          "display": "Name",
+          "element-type": "string"
+        },
+        {
+          "name": "modelFirst",
+          "display": "Model First",
+          "element-type": "string"
+        },
+        {
+          "name": "modelSecond",
+          "display": "Model Second",
+          "element-type": "string"
+        }
+      ]
+    }
+  ]
+}

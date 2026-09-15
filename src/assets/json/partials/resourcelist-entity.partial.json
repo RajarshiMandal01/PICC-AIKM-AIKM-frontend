@@ -1,0 +1,259 @@
+{
+    "name": "resourcelist",
+    "display": "Resource List",
+    "element-type": "object",
+    "elements": [
+
+      {
+        "name":"models",
+        "display":"Models",
+        "element-type": "array",
+        "mandatory": true,
+        "elements":[
+          {
+            "name":"name",
+            "display":"Name",
+            "element-type": "string",
+            "help-text": "Mandatory field & has to start with capital letter",
+            "validations": [{"required": true},{"pattern": true, "pattern-value": "[A-Z][a-zA-Z]*"}]
+          },
+          {
+            "name":"model",
+            "display":"Model",
+            "element-type": "string",
+            "input-type":"textarea",
+          "editor": true,
+          "editorMode": "json",
+          "help-text": "This is a sample model structure, please modify as per your need.",
+          "def-val": {"rootclass":"MyModelTO","schema":{"$schema":"http://json-schema.org/draft-04/schema#","type":"object","properties":{"id":{"type":"string"},"firstField":{"type":"string"},"secondField":{"type":"string"},"description":{"type":"string"}}}}
+
+          }
+
+
+        ]
+      },
+
+      {
+        "name":"exceptions",
+        "display":"Exceptions",
+        "element-type": "array",
+        "mandatory": true,
+         "elements":[
+          {
+            "name": "name",
+            "display": "Name",
+            "element-type": "string",
+            "help-text": "Mandatory field & has to start with capital letter",
+          "validations": [{"required": true},{"pattern": true, "pattern-value": "[A-Z][a-zA-Z]*"}]
+
+          },
+          {
+            "name": "extends",
+            "display": "Extends",
+            "element-type": "string",
+            "default-val": "RuntimeException",
+            "input-type": "select"
+          }
+
+         ]
+
+      },
+      {
+        "name":"persistence",
+        "display":"Persistence",
+        "element-type": "object",
+        "elements":[
+
+            {
+                "name":"entityGenerationStrategy",
+                "display":"Entity Generation Strategy",
+                "element-type": "string",
+                "default-val": "bottomUp",
+                "input-type": "select"
+            },
+            {
+                "name":"databaseDetails",
+                "display":"Database Details",
+                "element-type": "object",
+                "elements":[
+                    {
+                        "name":"type",
+                        "display":"Type",
+                        "element-type": "string",
+                        "input-type": "select",
+                        "default-val": "POSTGRESQL"
+
+                    },
+                    {
+                        "name":"dataSourcePlatform",
+                        "display":"Datasource Platform",
+                        "element-type": "string",
+                        "default-val":"postgres"
+
+                    },
+                    {
+                        "name":"url",
+                        "display":"URL",
+                        "element-type": "string",
+                        "default-val": "jdbc:postgresql://nnp.nubons.com:31158/lcnc_ent_test",
+                        "help-text": "Please make sure to create the database mentioned here prior to generating."
+
+                    },
+                    {
+                        "name":"user",
+                        "display":"User",
+                        "element-type": "string",
+                        "help-text":"For eg: postgres"
+
+                    },
+                    {
+                        "name":"password",
+                        "display":"Password",
+                        "element-type": "string",
+                        "help-text":"For eg: postgres"
+
+                    },
+                    {
+                        "name":"schema",
+                        "display":"Schema",
+                        "element-type": "string",
+                        "default-val": "public"
+
+                    }
+                ]
+            },
+            {
+                "name":"excludeTables",
+                "display":"Exclude Tables",
+                "element-type": "list",
+                "help-text": "This is the name of the table that should be excluded from your database. It should be in your database"
+            },
+            {
+                "name":"repositories",
+                "display":"Repositories",
+                "element-type": "array",
+                "elements":[
+                    {
+                        "name":"name",
+                        "display":"Name",
+                        "element-type": "string",
+                        "help-text":"For eg: CustomerRepository"
+                    },
+                    {
+                        "name":"superType",
+                        "display":"Super Type",
+                        "element-type": "string",
+                        "help-text":"This is a read only field",
+                        "default-val": "JpaRepository",
+                        "read-only": true
+                    },
+                    {
+                        "name":"tableName",
+                        "display":"Table Name",
+                        "element-type": "string",
+                        "help-text":"This table name should be present in your database"
+
+                    },
+                    {
+                        "name":"mappingModel",
+                        "display":"Mapping Model",
+                        "element-type": "string",
+                        "input-type": "select"
+                    },
+                    {
+                        "name":"idType",
+                        "display":"ID Type",
+                        "element-type": "string",
+                        "help-text":"For eg: BigInteger"
+
+                    }
+                ]
+            }
+
+
+         ]
+      },
+      {
+        "name":"services",
+        "display":"Services",
+        "element-type": "array",
+        "elements":[
+          {
+            "name":"name",
+            "display":"Name",
+            "element-type": "string",
+            "help-text": "Mandatory field & has to start with capital letter",
+            "validations": [{"required": true},{"pattern": true, "pattern-value": "[A-Z][a-zA-Z]*"}]
+          },
+          {
+            "name":"methods",
+            "display":"Methods",
+            "element-type": "array",
+            "elements":[
+              {
+                "name":"methodName",
+                "display":"Method Name",
+                "element-type": "string",
+                "help-text": "Mandatory field & has to start with small letter",
+                "validations": [{"required": true},{"pattern": true, "pattern-value": "[a-z][a-zA-Z]*" }]
+              },
+              {
+                "name":"description",
+                "display":"Description",
+                "element-type": "string",
+                "help-text": "For eg: Read all the customers"
+              },
+              {
+                "name":"transactional",
+                "display":"Transactional",
+                "element-type": "string",
+                "default-val": "no",
+                "input-type": "select"
+
+              },
+              {
+                "name":"inputparams",
+                "display":"Input Params",
+                "element-type": "array",
+                "elements":[
+                    {
+                        "name":"dataType",
+                        "display":"Data type",
+                        "element-type": "string",
+                        "help-text": "For eg: Long"
+
+                    },
+                    {
+                        "name":"var",
+                        "display":"Var",
+                        "element-type": "string",
+                        "help-text":"For eg: id"
+                      }
+                ]
+              },
+              {
+                "name":"outputParam",
+                "display":"Output Param",
+                "element-type": "string",
+                "help-text":"For eg: CustomerDto"
+              },
+              {
+                "name":"exceptions",
+                "display":"Exceptions",
+                "element-type": "list",
+                "input-type": "select"
+              },
+              {
+                "name":"repositories",
+                "display":"Repositories",
+                "element-type": "list",
+                "help-text":"For eg: CustomerRepository",
+                "input-type": "select"
+              }
+            ]
+          }
+
+        ]
+      }
+    ]
+  }

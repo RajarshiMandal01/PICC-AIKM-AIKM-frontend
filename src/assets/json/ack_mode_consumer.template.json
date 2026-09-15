@@ -1,0 +1,22 @@
+{
+  "values":[
+
+      {
+        "name":"CLIENT_ACKNOWLEDGE"
+
+      },
+      {
+          "name":"AUTO_ACKNOWLEDGE"
+
+      },
+      {
+        "name":"DUPS_OK_ACKNOWLEDGE"
+
+    },
+    {
+      "name":"SESSION_TRANSACTED"
+
+  }
+
+  ]
+}

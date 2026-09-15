@@ -1,0 +1,326 @@
+{
+  "name": "resourcelist",
+  "display": "Resource List",
+  "element-type": "array",
+  "elements": [
+    {
+      "name": "resources",
+      "display": "Resources",
+      "element-type": "string",
+      "validations": [{"required": true},{"pattern": true, "pattern-value": "[a-z][a-zA-Z0-9]*" }],
+      "help-text": "This is mandtory field. The first character must be an alphabet and should be lowercase"
+    },
+    {
+      "name": "models",
+      "display": "Models",
+      "element-type": "array",
+      "mandatory": true,
+      "elements": [
+        {
+          "name": "name",
+          "display": "Name",
+          "element-type": "string",
+          "help-text": "Mandatory field & has to start with capital letter",
+          "validations": [{"required": true},{"pattern": true, "pattern-value": "[A-Z][a-zA-Z]*"}]
+        },
+        {
+          "name": "model",
+          "display": "Model",
+          "element-type": "string",
+          "input-type":"textarea",
+          "editor": true,
+          "editorMode": "json",
+          "help-text": "This is a sample model structure, please modify as per your need.",
+          "def-val": {"rootclass":"MyModelTO","schema":{"$schema":"http://json-schema.org/draft-04/schema#","type":"object","properties":{"id":{"type":"string"},"firstField":{"type":"string"},"secondField":{"type":"string"},"description":{"type":"string"}}}}
+        }
+      ]
+    },
+    {
+      "name": "exceptions",
+      "display": "Exceptions",
+      "element-type": "array",
+      "mandatory": true,
+      "elements": [
+        {
+          "name": "name",
+          "display": "Name",
+          "element-type": "string",
+          "help-text": "Mandatory field & has to start with capital letter",
+          "validations": [{"required": true},{"pattern": true, "pattern-value": "[A-Z][a-zA-Z]*"}]
+        },
+        {
+          "name": "extends",
+          "display": "Extends",
+          "element-type": "string",
+          "default-val": "Exception",
+          "read-only": true
+        }
+      ]
+    },
+    {
+      "name": "queueconfig",
+      "display": "Queue Config",
+      "element-type": "object",
+      "elements": [
+        {
+          "name": "dlq",
+          "display": "DLQ",
+          "element-type": "string",
+          "input-type": "select",
+          "default-val": "true"
+        },
+        {
+          "name": "consumer",
+          "display": "Consumer",
+          "element-type": "array",
+          "elements": [
+            {
+              "name": "messageClass",
+              "display": "Message Class",
+              "element-type": "string",
+              "input-type": "select"
+            },
+            {
+              "name": "offset_reset",
+              "display": "Offset Reset",
+              "element-type": "string",
+              "default-val": "earliest",
+              "read-only": true
+            },
+            {
+              "name": "auto_commit",
+              "display": "Auto Commit",
+              "element-type": "string",
+              "default-val": "false",
+              "read-only": true
+            },
+            {
+              "name": "key_deserializer",
+              "display": "Key Deserializer",
+              "element-type": "string",
+              "default-val": "StringDeserializer"
+            },
+            {
+              "name": "value_deserializer",
+              "display": "Value Deserializer",
+              "element-type": "object",
+              "elements": [
+                {
+                  "name": "type",
+                  "display": "Type",
+                  "element-type": "string",
+                  "default-val": "JsonDeserializer"
+                },
+                {
+                  "name": "trusted_pkg",
+                  "display": "Trusted Pkg",
+                  "element-type": "string",
+                  "default-val": "'*'"
+                },
+                {
+                  "name": "remove_typeheaders",
+                  "display": "Remove Typeheaders",
+                  "element-type": "string",
+                  "default-val": "false",
+                  "input-type": "select"
+                }
+              ]
+            },
+            {
+              "name": "listener_container",
+              "display": "Listener Container",
+              "element-type": "object",
+              "elements": [
+                {
+                  "name": "messageClass",
+                  "display": "Message Class",
+                  "element-type": "string",
+                  "input-type": "select"
+                },
+                {
+                  "name": "ack_mode",
+                  "display": "Ack Mode",
+                  "element-type": "string",
+                  "input-type": "select",
+                  "default-val": "MANUAL_IMMEDIATE"
+                },
+                {
+                  "name": "err_maxAttempt",
+                  "display": "Error Max Attempt",
+                  "element-type": "string",
+                  "default-val": "3",
+                  "validations": [{"pattern": true, "pattern-value": "[0-9]+"}],
+                  "help-text":"not required if errhandle is false"
+                },
+                {
+                  "name": "err_attempt_intrval",
+                  "display": "Error Attempt Interval",
+                  "element-type": "string",
+                  "default-val":"1000",
+                  "validations": [{"pattern": true, "pattern-value": "[0-9]+"}],
+                  "help-text":"not required if errhandle is false"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "services",
+      "display": "Services",
+      "element-type": "array",
+      "elements": [
+        {
+          "name": "name",
+          "display": "Name",
+          "element-type": "string",
+          "help-text": "Mandatory field & has to start with capital letter",
+          "validations": [{"required": true},{"pattern": true, "pattern-value": "[A-Z][a-zA-Z]*"}]
+        },
+        {
+          "name": "type",
+          "display": "Type",
+          "element-type": "string",
+          "default-val": "consumer"
+        },
+        {
+          "name": "methodconfig",
+          "display": "Method Config",
+          "element-type": "array",
+          "elements" :[
+            {
+              "name": "methodName",
+              "display": "Method Name",
+              "element-type": "string",
+              "help-text": "Mandatory field & has to start with small letter",
+              "validations": [{"required": true},{"pattern": true, "pattern-value": "[a-z][a-zA-Z]*" }]
+            },
+            {
+              "name": "associatedTopic",
+              "display": "Associated Topic",
+              "element-type": "array",
+              "elements" : [
+                {
+                  "name": "name",
+                  "display": "Name",
+                  "element-type": "string",
+                  "help-text":"For eg: topic_1"
+                },
+                {
+                  "name": "partition_count",
+                  "display": "Partition Count",
+                  "element-type": "string",
+                  "validations": [{"required": true},{"pattern": true, "pattern-value": "[0-9]+"}],
+                  "help-text":"For eg: 3"
+                }
+              ]
+            },
+            {
+              "name": "group_id",
+              "display": "Group Id",
+              "element-type": "string",
+              "help-text":"For eg: group_topic_cust"
+            },
+            {
+              "name": "Description",
+              "display": "Description",
+              "element-type": "string",
+              "help-text":"For eg: receive cusomer message to queue"
+            },
+            {
+              "name": "ack",
+              "display": "Ack",
+              "element-type": "string",
+              "default-val":"true",
+              "read-only": true,
+              "help-text":"not required if errhandle is false"
+            },
+            {
+              "name": "requests",
+              "display": "Requests",
+              "element-type": "object",
+              "elements":[
+                {
+                  "name": "type",
+                  "display": "Type",
+                  "element-type": "string",
+                  "input-type": "select",
+                  "help-text": "Mandatory field & has to start with capital letter. It is the datatype, for eg. String, Double, Float etc",
+                  "validations": [{"required": true},{"pattern": true, "pattern-value": "[A-Z][a-zA-Z0-9]*" }]
+
+                },
+                {
+                  "name": "var",
+                  "display": "Var",
+                  "element-type": "string",
+                  "help-text": "Mandatory field & has to start with small letter",
+                  "validations": [{"required": true},{"pattern": true, "pattern-value": "[a-z][a-zA-Z0-9]*" }]
+                }
+              ]
+            },
+            {
+              "name": "response",
+              "display": "Response",
+              "element-type": "object",
+              "elements":[
+                {
+                  "name": "type",
+                  "display": "Type",
+                  "element-type": "string",
+                  "help-text": "For eg: void"
+                }
+              ]
+            },
+            {
+              "name": "exceptions",
+              "display": "Exceptions",
+              "element-type": "array",
+              "mandatory": true,
+              "elements":[
+                {
+                  "name":"code",
+                  "display":"Message Code",
+                  "element-type": "string",
+                  "help-text": "For eg: 404"
+                },
+                {
+                  "name":"expmesseage",
+                  "display":"Exception Message",
+                  "element-type": "string",
+                  "help-text": "For eg: Not found"
+                },
+                {
+                  "name":"expclass",
+                  "display":"Exception Class",
+                  "element-type": "string",
+                  "input-type": "select",
+                  "help-text": "For eg: MyModelNotFoundException"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "util",
+      "display": "Util",
+      "element-type": "array",
+      "elements": [
+        {
+          "name":"name",
+          "display":"Name",
+          "element-type": "string",
+          "help-text": "For eg: MyModelTOMapper"
+        },
+        {
+          "name":"modelFirst",
+          "display":"Model First",
+          "element-type": "string",
+          "input-type": "select"
+        }
+      ]
+    }
+  ]
+}

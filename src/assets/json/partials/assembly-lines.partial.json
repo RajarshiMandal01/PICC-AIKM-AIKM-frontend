@@ -1,0 +1,99 @@
+{
+    "name": "assemblyLines",
+    "display": "Assembly Lines",
+    "element-type": "array",
+    "elements":[
+        {
+            "name": "name",
+            "display": "Name",
+            "element-type": "string"
+        },
+        {
+            "name": "northBound",
+            "display": "North Bound",
+            "element-type": "object",
+            "elements":[
+                {
+                    "name": "modulename",
+                    "display": "Module Name",
+                    "category":"northbound",
+                    "input-type":"select",
+                    "element-type": "string"
+                },
+                {
+                    "name": "resource",
+                    "display": "Resource",
+                    "input-type":"select",
+                    "category":"northbound",
+                    "dependenson":"modulename",
+                    "element-type": "string"
+                },
+                {
+                    "name": "serviceName",
+                    "display": "Service Name",
+                    "input-type":"select",
+                    "category":"northbound",
+                    "dependenson":"modulename:resource",
+                    "element-type": "string"
+                },
+                {
+                    "name": "southBounds",
+                    "display": "South Bounds",
+                    "element-type": "array",
+                    "elements":[
+                        {
+                            "name": "modulename",
+                            "display": "Module Name",
+                            "category":"southbound",
+                            "input-type":"select",
+                            "element-type": "string"
+                        },
+                        {
+                            "name": "resource",
+                            "display": "Resource",
+                            "input-type":"select",
+                            "category":"southbound",
+                            "dependenson":"modulename",
+                            "element-type": "string"
+                        },
+                        {
+                            "name": "serviceName",
+                            "display": "Service Name",
+                            "input-type":"select",
+                            "category":"southbound",
+                            "dependenson":"modulename:resource",
+                            "element-type": "string"
+                        }
+                    ]
+                },
+                {
+                    "name": "mappings",
+                    "display": "Method Mappings",
+                    "element-type": "array",
+                    "elements":[
+                        {
+                            "name": "northboundMethod",
+                            "display": "NorthBound Method",
+                            "element-type": "string",
+                            "input-type":"select",
+                            "category":"northbound",
+                            "dependenson":"modulename:resource:serviceName"
+
+                        },
+                        {
+                            "name": "southboundMethods",
+                            "display": "SouthBound Methods",
+                            "element-type": "string",
+                            "input-type":"multiselect",
+                            "category":"southbound",
+                            "dependenson":"modulename:resource:serviceName"
+
+                        }
+                    ]
+                }
+
+
+            ]
+        }
+    ]
+}

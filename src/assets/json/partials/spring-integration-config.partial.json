@@ -1,0 +1,217 @@
+{
+  "name": "springIntegrationConfig",
+  "display": "Spring Integration Config",
+  "element-type": "object",
+  "elements":[
+
+    {
+        "name":"channels",
+        "display":"Channels",
+        "element-type": "array",
+        "elements":[
+            {
+                "name": "name",
+                "display": "Name",
+                "element-type": "string"
+            },
+            {
+                "name": "type",
+                "display": "Type",
+                 "element-type": "string"
+            }
+
+        ]
+    },
+    {
+        "name":"transformers",
+        "display":"Transformers",
+        "element-type": "array",
+        "elements":[
+            {
+                "name": "name",
+                "display": "Name",
+                 "element-type": "string"
+            },
+            {
+                "name": "type",
+                "display": "Type",
+                 "element-type": "string"
+            },
+            {
+                "name": "inputChannel",
+                "display": "Input Channel",
+                "element-type": "string",
+                "input-type":"select"
+            },
+            {
+                "name": "outputChannel",
+                "display": "Output Channel",
+                "element-type": "string",
+                "input-type":"select"
+
+
+            },
+            {
+                "name": "file",
+                "display": "File",
+                "element-type": "string"
+            },
+            {
+                "name": "fileContent",
+                "display": "File Content",
+                "element-type": "string",
+                "input-type":"textarea"
+            }
+        ]
+    },
+    {
+        "name": "routers",
+        "display": "Routers",
+        "element-type": "array",
+         "elements":[
+            {
+                "name": "name",
+                "display": "Name",
+                "element-type": "string"
+            },
+            {
+                "name": "type",
+                "display": "Type",
+                "element-type": "string"
+            },
+            {
+                "name": "timeout",
+                "display": "Timeout",
+                "element-type": "string"
+            },
+            {
+                "name": "ignoreSendFailures",
+                "display": "Ignore Send Failure",
+                "element-type": "string",
+                "input-type":"select"
+            },
+            {
+                "name": "applySequence",
+                "display": "Apply Sequence",
+                "element-type": "string",
+                "input-type":"select"
+            },
+            {
+                "name": "inputChannel",
+                "display": "Input Channel",
+                "element-type": "string",
+                "input-type":"select"
+            },
+            {
+                "name": "recipientChannels",
+                "display": "Recipient Channels",
+                "input-type":"select",
+                "element-type": "list"
+            }
+         ]
+    },
+    {
+        "name": "jms",
+        "display": "JMS",
+        "element-type": "object",
+        "elements":[
+            {
+                "name": "brokerConfigs",
+                "display": "Broker Configs",
+                "element-type": "array",
+                "elements":[
+                    {
+                        "name": "broker",
+                        "display": "Broker",
+                        "element-type": "string",
+                        "input-type":"select"
+                    },
+                    {
+                        "name": "connectionURL",
+                        "display": "Connection URL",
+                        "element-type": "string"
+                    },
+                    {
+                        "name": "userName",
+                        "display": "User Name",
+                        "element-type": "string"
+                    },
+                    {
+                        "name": "password",
+                        "display": "Password",
+                        "element-type": "string"
+                    }
+                ]
+            },
+            {
+
+                "name": "outboundAdapters",
+                "display": "Outbound Adapters",
+                "element-type": "array",
+                "elements":[
+                    {
+                        "name": "name",
+                        "display": "Name",
+                        "element-type": "string"
+                    },
+                    {
+                        "name": "inputChannel",
+                        "display": "Input Channel",
+                        "element-type": "string",
+                        "input-type":"select"
+                    },
+                    {
+                        "name": "destination",
+                        "display": "Destination",
+                        "element-type": "string"
+                    },
+                    {
+                        "name": "broker",
+                        "display": "Broker",
+                        "element-type": "string",
+                        "input-type":"select"
+                    }
+                    
+                ]
+            }
+        ]
+    },
+    {
+        "name": "soap",
+        "display": "SOAP",
+        "element-type": "object",
+        "elements":[
+            {
+                "name": "gatewayConfigs",
+                "display": "Gateway Config",
+                "element-type": "array",
+                "elements":[
+                    {
+                        "name": "name",
+                        "display": "Name",
+                        "element-type": "string"
+                    },
+                    {
+                        "name": "endpointURL",
+                        "display": "End Point URL",
+                        "element-type": "string"
+                    },
+                    {
+                        "name": "inputChannel",
+                        "display": "Input Channel",
+                        "input-type":"select",
+                        "element-type": "string"
+                    },
+                    {
+                        "name": "outputChannel",
+                        "display": "Output Channel",
+                        "input-type":"select",
+                        "element-type": "string"
+                    }
+                ]
+            }
+        ]
+    }
+  ]
+
+}

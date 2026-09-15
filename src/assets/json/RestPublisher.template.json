@@ -1,0 +1,32 @@
+{
+  "type": "rest",
+  "module": {
+  "name": "module",
+  "display": "Module",
+  "element-type": "object",
+  "elements":[
+    {
+        "import": "basic-rest-publisher"
+
+    },
+    {
+        "import": "dependencies"
+    },
+    {
+        "import": "dirspec"
+    },
+
+    {
+        "name": "propertyfiles",
+        "display": "Property Files",
+        "element-type": "list",
+        "help-text": "property name should end with .properties",
+        "validations": [{"required": true},{"pattern": true, "pattern-value": "(?!-[-]{2})[a-z][a-z0-9]+(?:-[a-z0-9]+)*(.properties)"}]
+    },
+    {
+        "import": "resourcelist-rest"
+    }
+
+  ]
+  }
+}

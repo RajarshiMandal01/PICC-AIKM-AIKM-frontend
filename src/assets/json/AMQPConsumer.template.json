@@ -1,0 +1,90 @@
+{
+  "type": "amqp-consumer",
+  "module": {
+    "name": "module",
+    "display": "Module",
+    "element-type": "object",
+    "elements": [
+      {
+        "import": "basic-amqp-consumer"
+      },
+      {
+        "import": "dependencies"
+      },
+      {
+        "import": "dirspec"
+      },
+      {
+        "name": "broker_property",
+        "display": "Broker Property",
+        "element-type": "object",
+        "elements": [
+          {
+            "name": "host",
+            "display": "Host",
+            "element-type": "string",
+            "help-text": "For eg: 10.184.52.101",
+            "validations": [{"required": true},{"pattern": true, "pattern-value": "([a-zA-Z0-9]|[a-zA-Z0-9][a-zA-Z0-9-]{0,61}[a-zA-Z0-9])(.([a-zA-Z0-9]|[a-zA-Z0-9][a-zA-Z0-9-]{0,61}[a-zA-Z0-9]))*"}]
+          },
+          {
+            "name": "port",
+            "display": "Port",
+            "element-type": "string",
+            "help-text": "For eg: 31672",
+            "validations": [{"required": true},{"pattern": true, "pattern-value": "([1-9][0-9]{0,3}|[1-5][0-9]{4}|6[0-4][0-9]{3}|65[0-4][0-9]{2}|655[0-2][0-9]|6553[0-5])"}]
+          },
+          {
+            "name": "username",
+            "display": "User Name",
+            "element-type": "string",
+            "help-text": "For eg: guest"
+          },
+          {
+            "name": "password",
+            "display": "Password",
+            "element-type": "string",
+            "help-text": "For eg: guest"
+          },
+          {
+            "name": "retry_enabled",
+            "display": "Retry Enabled",
+            "element-type": "string",
+            "input-type": "select",
+            "default-val": "true"
+          },
+          {
+            "name": "retry_initial_interval",
+            "display": "Retry Initial Interval",
+            "element-type": "string",
+            "help-text":"For eg: 3s"
+          },
+          {
+            "name": "retry_max_attempts",
+            "display": "Retry Max Attempts",
+            "element-type": "string",
+            "help-text":"For eg: 5",
+            "validations": [{"required": true},{"pattern": true, "pattern-value": "[0-9]+"}]
+          },
+          {
+            "name": "retry_max_interval",
+            "display": "Retry Max Interval",
+            "element-type": "string",
+            "help-text":"For eg: 10s"
+
+          },
+          {
+            "name": "retry_multiplier",
+            "display": "Retry Multiplier",
+            "element-type": "string",
+            "help-text":"For eg: 2",
+            "validations": [{"required": true},{"pattern": true, "pattern-value": "[0-9]+"}]
+
+          }
+        ]
+      },
+      {
+        "import" : "resourcelist-amqp-consumer"
+      }
+    ]
+  }
+}

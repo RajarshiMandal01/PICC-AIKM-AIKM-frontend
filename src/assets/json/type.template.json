@@ -1,0 +1,22 @@
+{
+  "values":[
+
+      {
+        "name":"String"
+
+      },
+      {
+          "name":"Boolean"
+
+      },{
+      "name":"Double"
+
+  },{
+    "name":"Float"
+
+},{
+  "name": "Int"
+}
+
+  ]
+}

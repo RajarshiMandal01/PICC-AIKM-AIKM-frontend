@@ -1,0 +1,17 @@
+Service 1 — manageBucket
+Does createBucket also provision the Milvus collection? Another service will be called from createBucket to provision the Milvus collection.  This call will be in asynchronous mode.  The Milvus collection name will be the name as input for BucketName.  This provision service will have a callback method to return success or failure.  Accordingly the status column of nnp_km_buckets will be updated.  I think we should have an additional column to capture errors in case of failure of MILVUS collection creation.
+CreateBucket will create a bucket under a single account.
+updateBucket will have capability to map a single bucket with multiple account or changing the accounts already mapped with that bucket.
+
+Service 2 — manageBucketDetails
+createBucketDetails will call an API for ingestion in asynchronous mode.  That API will have a callback method to return success or failure.  Accordingly the status column will be updated.  Should we have another column to capture errors (in case of failure)?  
+updateBucketDetails will have  Delete consideration: deleting a document (soft-delete) should also remove its vectors from Milvus via the ingestion service's `delete_by_source(milvus_source_id)`.   There should also be facility to update vectors.
+
+Service 3 — manageQuestions
+Embedding questions into Milvus will be done through separate process.  It will not be done through any method from this service.  So question_embedding_id` stays null at this point.
+addQDetails 
+
+Service 4 — manageDataSql
+At this point the service must reject a `connection_url` that contains inline credentials (`user:pass@`). Credentials will be provided run time by the user when connecting.
+A new column training_script to be included in the table NNP_KM_DATABASE.  This script will hold script to provide the context to Vanna.  A separate service is there (which will be needed update) to interact with Vanna.  From this service no interaction with Milvus
+

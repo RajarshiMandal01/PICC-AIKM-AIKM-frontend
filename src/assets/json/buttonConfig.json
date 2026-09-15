@@ -1,0 +1,63 @@
+{
+    "bbcomp_gen":{"save":{"hidden":false},"launch":{"hidden":true},"deploy":{"hidden":true},"delete":{"hidden":true},"add":{"hidden":true}, "prev":{"hidden": true}, "next":{"hidden": true}},
+    "bbcomp_bsjs":{"save":{"hidden":false},"launch":{"hidden":true},"deploy":{"hidden":true},"delete":{"hidden":true},"add":{"hidden":true}, "prev":{"hidden": true}, "next":{"hidden": true}},
+    "CMP_1":{"save":{"hidden":false},"launch":{"hidden":true},"deploy":{"hidden":true},"delete":{"hidden":true},"add":{"hidden":true}, "prev":{"hidden": true}, "next":{"hidden": true}},
+    "bbcomp_ms_dxp": {"save": {"hidden":false}, "launch":{"hidden": true},"deploy" :{"hidden":true},"delete":{"hidden":true},"add":{"hidden":true}, "prev":{"hidden": true}, "next":{"hidden": true}},
+    "bbcomp_spcam_ka": {"save": {"hidden":false}, "launch":{"hidden": true},"deploy" :{"hidden":true},"delete":{"hidden":true},"add":{"hidden":true}, "prev":{"hidden": true}, "next":{"hidden": true}},
+    "bbcomp_node":{"save":{"hidden":false},"launch":{"hidden":true},"deploy":{"hidden":true},"delete":{"hidden":true},"add":{"hidden":true}, "prev":{"hidden": true}, "next":{"hidden": true}},
+    "bbcomp_spboot":{"save":{"hidden":false},"launch":{"hidden":true},"deploy":{"hidden":true},"delete":{"hidden":true},"add":{"hidden":true}, "prev":{"hidden": true}, "next":{"hidden": true}},
+    "bbcomp_spcamle":{"save":{"hidden":false},"launch":{"hidden":true},"deploy":{"hidden":true},"delete":{"hidden":true},"add":{"hidden":true}, "prev":{"hidden": true}, "next":{"hidden": true}},
+    "bbcomp_ms_tmo":{"save":{"hidden":false},"launch":{"hidden":true},"deploy":{"hidden":true},"delete":{"hidden":true},"add":{"hidden":true}, "prev":{"hidden": true}, "next":{"hidden": true}},
+    "bbcomp_ms":{"save":{"hidden":false},"launch":{"hidden":true},"deploy":{"hidden":true},"delete":{"hidden":true},"add":{"hidden":true}, "prev":{"hidden": true}, "next":{"hidden": true}},
+    "bbcomp_ms_bel":{"save":{"hidden":false},"launch":{"hidden":true},"deploy":{"hidden":true},"delete":{"hidden":true},"add":{"hidden":true}, "prev":{"hidden": true}, "next":{"hidden": true}},
+    "bbcomp_bus_dashboard":{"save":{"hidden":false},"launch":{"hidden":true},"deploy":{"hidden":true},"delete":{"hidden":true},"add":{"hidden":true}, "prev":{"hidden": true}, "next":{"hidden": true}},
+    "bbcomp_bus_portal":{"save":{"hidden":false},"launch":{"hidden":true},"deploy":{"hidden":true},"delete":{"hidden":true},"add":{"hidden":true}, "prev":{"hidden": true}, "next":{"hidden": true}},
+    "bbcomp_bus_chat":{"save":{"hidden":false},"launch":{"hidden":true},"deploy":{"hidden":true},"delete":{"hidden":true},"add":{"hidden":true}, "prev":{"hidden": true}, "next":{"hidden": true}},
+    "CMP_591":{"save":{"hidden":false},"launch":{"hidden":true},"deploy":{"hidden":true},"add":{"hidden":true}, "prev":{"hidden": true}, "next":{"hidden": true}},
+    "bbcomp_iot":{"save":{"hidden":false},"launch":{"hidden":true,"spec":{"id":"cspec_iot_3","value":"all"},"url":"$src_node_red_url"},"deploy":{"hidden":true},"delete":{"hidden":true},"add":{"hidden":true}, "prev": {"hidden": true}, "next":{"hidden":true, "url":"/module/$reqId/platform/bbcomp_iot_ndeploy"}},
+    "bbcomp_iot_nodedev":{"save":{"hidden":true},"launch":{"hidden":false},"deploy":{"hidden":true},"delete":{"hidden":true},"add":{"hidden":true}, "prev":{"hidden": true}, "next":{"hidden": true}},
+    "bbcomp_iot_nconfig":{"save":{"hidden":false},"launch":{"hidden":true},"deploy":{"hidden":true},"delete":{"hidden":false,"spec":{"id":"cspec_iot_7","value":"B"}},"add":{"hidden":false}, "prev":{"hidden": true}, "next":{"hidden": true}},
+    "bbcomp_iot_ndeploy":{"save":{"hidden":true},"launch":{"hidden":true},"deploy":{"hidden":false},"delete":{"hidden":true},"add":{"hidden":true}, "prev":{"hidden":false, "url":"/module/$reqId/platform/bbcomp_iot"}, "next": {"hidden": true}},
+
+	"bbcomp_ang" :{
+
+	"save":{"hidden":false},
+	"launch":{"hidden":true,"spec":{"id":"compspec_ang_tmpl","value":"custom-angular-ui"},"url":"$dndUrl?id=$reqId&tmpl=angularjs&ds=$uxTemplate"},
+	"deploy" :{"hidden":true},
+    "delete":{"hidden":true},
+    "add":{"hidden":true}, 
+    "prev":{"hidden": true}, 
+    "next":{"hidden": true}
+
+	},
+    "bbcomp_bshtml" :{
+
+	"save":{"hidden":false},
+	"launch":{"hidden":true,"spec":{"id":"compspec_htm_tmpl","value":"all"},"url":"$dndUrl?id=$reqId&tmpl=html&ds=$uxTemplate"},
+	"deploy" :{"hidden":true},
+    "delete":{"hidden":true},
+    "add":{"hidden":true}, 
+    "prev":{"hidden": true}, 
+    "next":{"hidden": true}
+
+	},
+    "bbcomp_react":{
+        "save":{"hidden":false},
+        "launch":{"hidden":true,"spec":{"id":"compspec_ract_tmpl","value":"all"},"url":"$dndUrl?id=$reqId&tmpl=reactnative&ds=$uxTemplate"},
+        "deploy":{"hidden":true},
+        "delete":{"hidden":true},
+        "add":{"hidden":true}, 
+        "prev":{"hidden": true}, 
+        "next":{"hidden": true}},
+      "bbcomp_react_att":{
+        "save":{"hidden":false},
+        "launch":{"hidden":true,"spec":{"id":"compspec_ractatt_tpl","value":"all"},"url":"$attDndUrl?id=$reqId&tmpl=reactnative&ds=$uxTemplate"},
+        "deploy":{"hidden":true},
+        "delete":{"hidden":true},
+        "add":{"hidden":true}, 
+        "prev":{"hidden": true}, 
+        "next":{"hidden": true}},
+    "bbcomp_api_orch_nr":{"save":{"hidden":false},"launch":{"hidden":true,"spec":{"id":"cspec_api_orch_2","value":"all"},"url":"$src_node_red_url"},"deploy":{"hidden":true},"delete":{"hidden":true},"add":{"hidden":true}, "prev":{"hidden": true}, "next":{"hidden":true, "url":"/module/$reqId/platform/bbcomp_api_ndeploy"}},
+    "bbcomp_api_ndeploy":{"save":{"hidden":false},"launch":{"hidden":true},"deploy":{"hidden":true},"delete":{"hidden":true},"add":{"hidden":true}, "prev":{"hidden":false, "url":"/module/$reqId/platform/bbcomp_api_orch_nr"}, "next": {"hidden": true}},
+    "bbcomp_api_nconfig":{"save":{"hidden":false},"launch":{"hidden":true},"deploy":{"hidden":true},"delete":{"hidden":false,"spec":{"id":"cspec_api_orch_5","value":"A"}},"add":{"hidden":false}, "prev":{"hidden": true}, "next":{"hidden": true} }
+}

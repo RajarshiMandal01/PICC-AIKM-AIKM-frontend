@@ -1,0 +1,14 @@
+{
+  "values":[
+
+      {
+        "name":"NON_PERSISTENT"
+
+      },
+      {
+          "name":"PERSISTENT"
+
+      }
+
+  ]
+}

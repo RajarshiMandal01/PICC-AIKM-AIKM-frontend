@@ -1,0 +1,25 @@
+{
+    "name": "log4j2Config",
+    "display": "Log4j2 Config",
+    "element-type": "object",
+    "elements": [
+        {
+            "name": "layoutType",
+            "display": "Layout Type",
+            "element-type": "string"
+        },
+        {
+            "name": "properties",
+            "display": "Properties",
+            "element-type": "object",
+            "elements":[
+                {
+                    "name": "patternRegex",
+                    "display": "Regex Pattern",
+                    "element-type": "string"
+                }
+            ]
+        }
+
+    ]
+}

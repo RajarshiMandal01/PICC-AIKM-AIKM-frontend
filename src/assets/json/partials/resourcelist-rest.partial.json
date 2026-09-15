@@ -1,0 +1,236 @@
+{
+  "name": "resourcelist",
+  "display": "Resource List",
+  "element-type": "array",
+  "elements": [
+    {
+      "name":"resources",
+      "display":"Resources",
+      "element-type": "string",
+      "validations": [{"required": true},{"pattern": true, "pattern-value": "[a-z][a-zA-Z0-9]*" }],
+      "help-text": "This is mandtory field. The first character must be an alphabet and should be lowercase"
+    },
+    {
+      "name":"models",
+      "display":"Models",
+      "element-type": "array",
+      "mandatory": true,
+      "elements":[
+        {
+          "name":"name",
+          "display":"Name",
+          "element-type": "string",
+          "help-text": "Mandatory field & has to start with capital letter",
+          "validations": [{"required": true},{"pattern": true, "pattern-value": "[A-Z][a-zA-Z]*"}]
+        },
+        {
+          "name":"model",
+          "display":"Model",
+          "element-type": "string",
+          "input-type":"textarea",
+          "editor": true,
+          "editorMode": "json",
+          "help-text": "This is a sample model structure, please modify as per your need.",
+          "def-val": {"rootclass":"MyModelTO","schema":{"$schema":"http://json-schema.org/draft-04/schema#","type":"object","properties":{"id":{"type":"string"},"firstField":{"type":"string"},"secondField":{"type":"string"},"description":{"type":"string"}}}}
+        }
+      ]
+    },
+    {
+      "name":"exceptions",
+      "display":"Exceptions",
+      "element-type": "array",
+      "mandatory": true,
+       "elements":[
+        {
+          "name":"name",
+          "display":"Name",
+          "element-type": "string",
+          "help-text": "Mandatory field & has to start with capital letter",
+          "validations": [{"required": true},{"pattern": true, "pattern-value": "[A-Z][a-zA-Z]*"}]
+        },
+        {
+          "name":"extends",
+          "display":"Extends",
+          "element-type": "string",
+          "default-val": "RuntimeException",
+          "read-only": true
+        }
+
+       ]
+
+    },
+    {
+      "name":"services",
+      "display":"Services",
+      "element-type": "array",
+      "elements":[
+        {
+          "name":"name",
+          "display":"Name",
+          "element-type": "string",
+          "help-text": "Mandatory field & has to start with capital letter",
+          "validations": [{"required": true},{"pattern": true, "pattern-value": "[A-Z][a-zA-Z]*"}]
+        },
+        {
+          "name":"basepath",
+          "display":"Basepath",
+          "element-type": "string",
+          "default-val": "/api/v1",
+          "help-text": "For eg: /api/v1 OR /api/v2 etc.",
+          "validations": [{"required": true}]
+        },
+        {
+          "name":"type",
+          "display":"Type",
+          "element-type": "string",
+          "help-text": "For eg: read OR write",
+          "validations": [{"required": true}]
+        },
+        {
+          "name":"methodconfig",
+          "display":"Method Config",
+          "element-type": "array",
+          "elements":[
+            {
+              "name":"methodName",
+              "display":"Method Name",
+              "element-type": "string",
+              "help-text": "Mandatory field & has to start with small letter",
+              "validations": [{"required": true},{"pattern": true, "pattern-value": "[a-z][a-zA-Z]*" }]
+            },
+            {
+              "name":"methodtype",
+              "display":"Method Type",
+              "element-type": "string",
+              "input-type": "select",
+              "default-val": "GET"
+            },
+            {
+              "name":"feature",
+              "display":"Feature",
+              "element-type": "string",
+              "input-type":"select",
+              "default-val": "read"
+            },
+            {
+              "name":"Description",
+              "display":"Description",
+              "element-type": "string",
+              "help-text": "For eg: My model details"
+            },
+            {
+              "name":"path",
+              "display":"Path",
+              "element-type": "string",
+              "help-text": "For eg: /myModel/{id}",
+              "validations": [{"required": true}]
+            },
+            {
+              "name":"requests",
+              "display":"Requests",
+              "element-type": "array",
+              "elements":[
+                {
+                  "name":"jsonmodel",
+                  "display":"JSON Model",
+                  "element-type": "string",
+                  "input-type": "select"
+                },
+                {
+                  "name":"annotation",
+                  "display":"Annotation",
+                  "element-type": "string",
+                  "help-text": "For eg: '@Parameter(description = ''This is some description'', required = true) @PathVariable'"
+                },
+                {
+                  "name":"inputparam",
+                  "display":"Input Param",
+                  "element-type": "string",
+                  "help-text": "Format: <Datatype> <variable> for eg. String id"
+                }
+              ]
+            },
+            {
+              "name":"response",
+              "display":"Response",
+              "element-type": "object",
+              "elements":[
+                {
+                  "name":"type",
+                  "display":"Type",
+                  "element-type": "string",
+                  "help-text": "For eg: MyModelTO OR MyModelTO[] etc."
+                },
+                {
+                  "name":"code",
+                  "display":"Code",
+                  "element-type": "string",
+                  "help-text": "For eg: 200"
+                },
+                {
+                  "name":"message",
+                  "display":"Message",
+                  "element-type": "string",
+                  "help-text": "For eg: SUCCESS"
+                }
+              ]
+            },
+            {
+              "name":"exceptions",
+              "display":"Exceptions",
+              "element-type": "array",
+              "mandatory": true,
+              "elements":[
+                {
+                  "name":"code",
+                  "display":"Message Code",
+                  "element-type": "string",
+                  "help-text": "For eg: 404"
+                },
+                {
+                  "name":"expmesseage",
+                  "display":"Exception Message",
+                  "element-type": "string",
+                  "help-text": "For eg: Resource not found"
+                },
+                {
+                  "name":"expclass",
+                  "display":"Exception Class",
+                  "element-type": "string",
+                  "input-type": "select",
+                  "help-text": "For eg: ResourceNotFoundException"
+                }
+
+
+              ]
+            }
+          ]
+        }
+
+      ]
+    },
+    {
+      "name":"util",
+      "display":"Util",
+      "element-type": "array",
+      "elements":[
+        {
+          "name":"name",
+          "display":"Name",
+          "element-type": "string",
+          "help-text": "For eg: MyModelTOMapper"
+        },
+        {
+          "name":"modelFirst",
+          "display":"Model First",
+          "element-type": "string",
+          "input-type": "select"
+        }
+
+
+      ]
+    }
+
+
+  ]
+}

@@ -1,0 +1,44 @@
+{
+  "name": "basic",
+  "display": "Basic",
+  "element-type": "object",
+  "elements": [
+    {
+      "name": "groupId",
+      "display": "Group Id",
+      "element-type": "string",
+      "help-text" : "com.nubons.msra",
+      "validations": [{"required": true},{"pattern": true, "pattern-value": "(?!.[.]{2})[a-z]+(?:[.][a-z]+)*"}]
+    },
+    {
+      "name": "artifactId",
+      "display": "Artifact Id",
+      "element-type": "string",
+      "help-text": "For eg: jms-consumer",
+      "validations": [{"required": true},{"pattern": true, "pattern-value": "(?!-[-]{2})[a-z]+(?:-[a-z]+)*" }]
+    },
+    {
+      "name": "version",
+      "display": "Version",
+      "element-type": "string",
+      "help-text": "For eg: 1.0.0-SNAPSHOT",
+      "validations": [{"required": true},{"pattern": true, "pattern-value": "(?![.])([0-9]+([.][0-9]+)*)([-.](SNAPSHOT))?(?![[0-9].])"}]
+    },
+    {
+      "name": "packaging",
+      "display": "Packaging",
+      "element-type": "string",
+      "input-type":"select",
+      "default-val": "jar",
+      "help-text" : "This is a read only field",
+      "read-only": true
+    },
+    {
+      "name": "modulename",
+      "display": "Module Name",
+      "element-type": "string",
+      "default-val": "jmsconsumer",
+      "read-only": true
+    }
+  ]
+}
